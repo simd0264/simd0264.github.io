@@ -104,6 +104,10 @@ bindsym ctrl+F2 exec killall mplayer
 bindsym ctrl+F3 exec pactl set-sink-mute 0 toggle
 bindsym ctrl+F6 exec pactl set-sink-volume 0 -- -5%
 bindsym ctrl+F7 exec pactl set-sink-volume 0 -- +5%
+второй вариант
+bindsym ctrl+F6 exec --no-startup-id pactl set-sink-volume 1 -- -5%
+bindsym ctrl+F7 exec --no-startup-id pactl set-sink-volume 1 -- +5%
+bindsym ctrl+F8 exec --no-startup-id pactl set-sink-mute 1 toggle
 
 --------------------------------------------------------------------------------------------------------------------------------
 
