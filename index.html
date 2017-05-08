@@ -1,7 +1,12 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>simd0264.github.io</title>
 <p><font face="monospace" size="3">
-<plaintext>Яркость экрана
+<plaintext>Скрипт проверки сколько человек играет на сервере
+tmp=$(wget -qO - http://bzstats.strayer.de/servers/stats/?serverid=43682 | grep -e align_callsign | wc -l) ; notify-send 'Играет '$tmp' человек'
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Яркость экрана
 sudo su
 # echo 5 > /sys/class/backlight/acpi_video0/brightness
 cat /sys/class/backlight/acpi_video0/brightness
