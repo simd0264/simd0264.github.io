@@ -11,6 +11,13 @@ sudo systemctl enable anbox-container-manager.service
 anbox session-manager --gles-driver=host &
 anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity
 Качать аппликации apk отсюда https://apkpure.com
+Установка в убунте
+wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer
+chmod +x anbox-installer
+Далее запускаем скрипт:
+./anbox-installer
+Альтернативный способ
+snap install --classic anbox-installer
 
 --------------------------------------------------------------------------------------------------------------------------------
 
