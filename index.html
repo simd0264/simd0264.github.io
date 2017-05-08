@@ -1,27 +1,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>simd0264.github.io</title>
 <p><font face="monospace" size="3">
-<plaintext>Установка эмулятора андроида anbox в арче
-sudo pacman -S sdl2_image anbox-modules-dkms-git
-yaourt -S anbox-image anbox-modules-dkms-git anbox-git
-sudo modprobe binder_linux
-sudo modprobe ashmem_linux
-sudo systemctl start anbox-container-manager.service
-sudo systemctl enable anbox-container-manager.service
-anbox session-manager --gles-driver=host &
-anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity
-Качать аппликации apk отсюда https://apkpure.com
-Установка в убунте
-wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer
-chmod +x anbox-installer
-Далее запускаем скрипт:
-./anbox-installer
-Альтернативный способ
-snap install --classic anbox-installer
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Сводка состояния поддержки
+<plaintext>Сводка состояния поддержки
 ubuntu-support-status
 
 --------------------------------------------------------------------------------------------------------------------------------
