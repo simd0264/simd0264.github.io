@@ -223,47 +223,6 @@ sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 ---
 
-Dash без загрузки из интернета
-wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
-Скрипт fixubuntu.sh
-seryi@seryi-laptop:~$ cat fixubuntu.sh
-#!/bin/bash
-GS="/usr/bin/gsettings"
-CCUL="com.canonical.Unity.lenses"
-V=`/usr/bin/lsb_release -rs`
-if [ $V == "14.04.1" ]; then
-$V=14.04
-fi
-MIN=`echo $V'>'12.10 | bc -l`
-FIXED_VER=15.04
-MAX=`echo $FIXED_VER'>'$V | bc -l`
-if [[ $MIN -eq 0 || $MAX -eq 0 ]]; then
-echo "Good news! This version of Ubuntu is not known to invade your privacy."
-exit 0
-fi
-SCHEMA="`$GS list-schemas | grep -i $CCUL | head -1`"
-if [[ -z "$SCHEMA" ]]
-then
-printf "Error: could not find Canonical schema %s.\n" "$CCUL" 1>&2
-exit 1
-else
-CCUL="$SCHEMA"
-fi
-$GS set $CCUL remote-content-search none
-if [[ $V < 13.10 ]]; then
-sudo apt-get remove -y unity-lens-shopping
-else
-$GS set $CCUL disabled-scopes \
-"['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope',
-'more_suggestions-populartracks.scope', 'music-musicstore.scope',
-'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope',
-'more_suggestions-skimlinks.scope']"
-fi;
-sudo iptables -A OUTPUT -d 91.189.92.11 -j DROP
-echo "All done. Enjoy your privacy."
-
----
-
 Удаление программ в wine
 wine uninstaller
 
@@ -571,8 +530,7 @@ filefrag -v /путь_к_файлу
 Проверка swap пространства
 swapon -s
 
----
----
+==================================================================================================================================================
 
 Инструкция по установке Arch Linux
 
