@@ -1,7 +1,14 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Заметки Linux</title>
 <p><font face="monospace" size="3">
-<plaintext>Отключить проверку PGP подписей в yaourt
+<plaintext>Debian не проверять ключи
+sudo apt-get --allow-unauthenticated update
+или добавить в /etc/apt/apt.conf
+APT::Get::AllowUnauthenticated "true";
+
+---
+
+Отключить проверку PGP подписей в yaourt
 yaourt --m-arg "--skippgpcheck" -S устанавливаемый_пакет
 
 ---
