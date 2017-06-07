@@ -692,9 +692,6 @@ echo olgmen > /etc/hostname
 
 Редактируем файл /etc/hosts
 nano /etc/hosts
-
----
-
 заменяем localhost.localdomain localhost в двух строках на
 olgmen localhost
 
@@ -706,8 +703,7 @@ mkinitcpio -p linux
 ---
 
 Устанавливаем grub
-pacman -S grub
-pacman -S os-prober
+pacman -S grub os-prober
 grub-install /dev/sdX -- ВНИМАНИЕ диск без номера !!!!!
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -769,7 +765,7 @@ passwd olgmen
 
 Даём права пользователю
 EDITOR=nano visudo
-Раскомментируем строки начинающиеся с %wheel
+Раскомментируем 1-ю строку, начинающуюся с %wheel
 
 ---
 
