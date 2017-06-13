@@ -400,6 +400,8 @@ dns в арче
 nohook resolv.conf
 В файле /etc/resolv.conf меняем DNS
 nameserver 8.8.8.8
+для виртуальной машины добавить в файл /etc/dhcpcd.conf
+static domain_name_servers=8.8.8.8
 
 ---
 
