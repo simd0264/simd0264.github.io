@@ -1,7 +1,13 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Заметки Linux</title>
 <p><font face="monospace" size="3">
-<plaintext>Ubuntu
+<plaintext>Ubuntu отключить cron и atd
+echo manual | sudo tee /etc/init/cron.override
+echo manual | sudo tee /etc/init/atd.override
+
+---
+
+Ubuntu
 mlocate периодически запускается, удалить
 
 ---
